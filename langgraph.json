@@ -1,0 +1,8 @@
+{
+  "python_version": "3.11",
+  "dependencies": ["."],
+  "graphs": {
+    "example_agent": "./src/langgraph_toolbox/example_agent.py:graph"
+  },
+  "env": ".env"
+}

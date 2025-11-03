@@ -55,6 +55,64 @@ from langgraph_toolbox import ...
 
 ---
 
+## 🎨 LangGraph Studio
+
+This project includes LangGraph Studio support for visual development and debugging.
+
+### Prerequisites
+
+1. **LangSmith Account**: Sign up at https://smith.langchain.com
+2. **Python 3.11+**: Required for LangGraph CLI
+3. **Environment Variables**: Set up your `.env` file
+
+### Setup
+
+```bash
+# 1. Copy environment template
+cp .env.example .env
+
+# 2. Add your LangSmith API key to .env
+LANGSMITH_API_KEY=lsv2_your_key_here
+
+# 3. Start the local server
+langgraph dev
+```
+
+### Using LangGraph Studio
+
+Once the server is running, you'll see:
+
+```
+API: http://localhost:2024
+Docs: http://localhost:2024/docs
+Studio: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+```
+
+Open the Studio URL in your browser to:
+- 📊 **Visualize** your agent graphs
+- 🎮 **Interact** with agents in real-time
+- 🐛 **Debug** execution flows step-by-step
+- 📝 **Edit** prompts and configurations live
+
+### Example Agent
+
+Try the included example agent:
+
+```bash
+# Start the server
+langgraph dev
+
+# In another terminal, test the agent
+curl -X POST http://localhost:2024/runs/stream \
+  -H "Content-Type: application/json" \
+  -d '{
+    "assistant_id": "example_agent",
+    "input": {"messages": [{"role": "user", "content": "Hello!"}]}
+  }'
+```
+
+---
+
 ## Features
 
 ### 🎯 State Management
