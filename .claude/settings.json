@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/scripts/run-notify.cmd \"작업 완료\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/scripts/run-notify.cmd \"작업 완료\""
+          }
+        ]
+      }
+    ]
+  }
+}
